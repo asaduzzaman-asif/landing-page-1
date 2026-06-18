@@ -1,0 +1,291 @@
+:root {
+            --primary-color: #4f46e5; /* Indigo */
+            --secondary-color: #1e293b; /* Slate Dark */
+            --accent-color: #f59e0b; /* Amber */
+            --light-bg: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #334155;
+            overflow-x: hidden;
+        }
+
+        /* --- Custom Utility Classes --- */
+        .text-primary-custom {
+            color: var(--primary-color) !important;
+        }
+
+        .bg-primary-custom {
+            background-color: var(--primary-color) !important;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            transition: all 0.3s ease;
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--secondary-color);
+            margin-left: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .btn-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            padding: 10px 25px;
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+            background-color: #4338ca;
+            color: white;
+        }
+
+        .btn-outline-custom {
+            border: 2px solid white;
+            color: white;
+            border-radius: 50px;
+            padding: 10px 25px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-custom:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.7)), 
+                        url('https://picsum.photos/seed/office1/1920/1080');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-top: -72px; /* Pull up behind navbar */
+            padding-top: 72px;
+        }
+
+        .hero-content h1 {
+            font-weight: 800;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* --- Services/Features --- */
+        .service-card {
+            border: none;
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            height: 100%;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(79, 70, 229, 0.1);
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- About Section --- */
+        .about-img {
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* --- Portfolio --- */
+        .portfolio-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            cursor: pointer;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(79, 70, 229, 0.85);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;    
+            transition: opacity 0.3s ease;
+            color: white;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        /* --- Pricing --- */
+        .pricing-card {
+            border: none;
+            border-radius: 20px;
+            padding: 40px;
+            transition: transform 0.3s;
+            position: relative;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+            z-index: 2;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #94a3b8;
+        }
+
+        .pricing-features li {
+            margin-bottom: 12px;
+            color: #64748b;
+        }
+
+        .pricing-features i {
+            color: #10b981; /* Green */
+            margin-right: 10px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--secondary-color);
+            color: #cbd5e1;
+            padding: 70px 0 30px 0;
+        }
+
+        footer h5 {
+            color: white;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        footer ul li {
+            margin-bottom: 12px;
+        }
+
+        footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+        }
+
+        /* --- Mobile Tweaks --- */
+        @media (max-width: 991px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+        }
